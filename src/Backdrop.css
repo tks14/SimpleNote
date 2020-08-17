@@ -1,0 +1,12 @@
+.Backdrop{
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    position: fixed;        
+    z-index: -10  ;
+    left: 0;
+    top: 0;
+    background-color: #CECECE;
+
+
+}
