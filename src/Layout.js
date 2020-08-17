@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
-
+import {Grid, Row, Col} from 'react-bootstrap'
 import Note from './Note'
 import './Layout.css'
 
 import Toolbar from './Toolbar'
 import Backdrop from './Backdrop'
+
 
 
 class Layout extends Component{
@@ -64,7 +65,7 @@ class Layout extends Component{
             <Toolbar addNoteHandler = {this.addNoteHandler}/>
 
             <Backdrop/>
-            <div>
+            <>
                 <div className = 'container' id='container'>
                     {componentList}
                 </div>
