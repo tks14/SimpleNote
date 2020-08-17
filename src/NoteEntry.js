@@ -29,10 +29,10 @@ class NoteEntry extends Component{
                 <ContentEditable
                     style={{textDecorationLine:this.state.decoration, color:this.state.color}}
                     innerRef={this.contentEditable}
-                    html={this.state.html} // innerHTML of the editable div
-                    disabled={false}       // use true to disable editing
-                    onChange={this.handleChange} // handle innerHTML change
-                    className='noteInput' // Use a custom HTML tag (uses a div by default)
+                    html={this.state.html} 
+                    disabled={false}       
+                    onChange={this.handleChange} 
+                    className='noteInput'
                     onKeyDown={this.handleKeyDown}  
                 />
                 <button className = 'xbox' onClick={this.xBoxClicked}>x</button>
