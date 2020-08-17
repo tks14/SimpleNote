@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './Note.css'
-import NoteEntry from './NoteEntry'
+import NoteEntry from './../NoteEntry/NoteEntry'
 
 class Note extends Component{
     constructor(props) {
@@ -54,7 +54,7 @@ class Note extends Component{
                 </div>
                 
                 
-                <button className='close' onClick={this.deleteNote}>Close</button>
+                <button className='closeButton' onClick={this.deleteNote}>Close</button>
                 
             </div>
         )

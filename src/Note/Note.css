@@ -1,13 +1,10 @@
 .Note{
     width: 300px;
-    min-height: 200px;
+    min-height: 250px;
     background-color: #FFF793;
     z-index: 500;
-    /* Firefox */
-    -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
-    /* Safari+Chrome */
-    -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
-    /* Opera */
+    -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);    
+    -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);    
     box-shadow: 5px 5px 7px rgba(33,33,33,.7);
     border-width: 3px;
     border-radius: 15px;
@@ -78,7 +75,7 @@
     transform: translateY(-3px);
 }
 
-.close {
+.closeButton {
     width: 80px;
     grid-row-start:3;
     grid-row-end:3;
@@ -94,7 +91,7 @@
     letter-spacing: 2.5px;
     font-weight: 500;
     color: #000;
-    background-color: #fff;
+    background-color: white;
     border: none;
     border-radius: 30px;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
@@ -103,7 +100,7 @@
     outline: none;
         
 }
-.close:hover {
+.closeButton:hover {
     background-color: #D44E50;
     box-shadow: 0px 8px 15px rgb(100, 11, 11);
     color: #fff;

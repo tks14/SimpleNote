@@ -1,0 +1,9 @@
+.colItem{
+  padding-top: 10px;
+}
+.container{
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+}

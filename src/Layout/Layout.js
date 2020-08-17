@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
-import {Grid, Row, Col} from 'react-bootstrap'
-import Note from './Note'
+import {Container, Col} from 'react-bootstrap'
+import Note from '../Note/Note'
 import './Layout.css'
 
-import Toolbar from './Toolbar'
-import Backdrop from './Backdrop'
+import Toolbar from './../Toolbar/Toolbar'
+import Backdrop from './../Backdrop/Backdrop'
 
 
 
@@ -51,25 +51,27 @@ class Layout extends Component{
             const newArray = [{id: 1, text: 'test'}]
             this.setState({noteArray: newArray})
         }
+
         for(var i=0; i<this.state.noteArray.length; i++){
             const currentId = this.state.noteArray[i].id
-            //const currentText = this.state.noteArray[i].text
-            componentList.push(
-                
-                <Note className='item' key={'note'+currentId} updateTextHandler={this.updateTextHandler}  addNoteHandler ={this.addNoteHandler} id = {currentId} deleteNoteHandler = {this.deleteNoteHandler}/>
-                      
-            )
+                componentList.push(
+                    <Col className='colItem' sm = {6} md={4}>
+                        <Note className='item' key={'note'+currentId} updateTextHandler={this.updateTextHandler}  addNoteHandler ={this.addNoteHandler} id = {currentId} deleteNoteHandler = {this.deleteNoteHandler}/> 
+                    </Col>
+                )
+            
+
         }
         return (
         <div>
             <Toolbar addNoteHandler = {this.addNoteHandler}/>
 
             <Backdrop/>
-            <>
-                <div className = 'container' id='container'>
+            <Container className ='container'>
+                                                 
                     {componentList}
-                </div>
-            </div>
+                            
+            </Container>
         </div>
         
         )
