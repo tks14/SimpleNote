@@ -7,7 +7,7 @@ const toolbar = (props) => (
             <button className = 'button' onClick={props.addNoteHandler}>Add Note</button>
         </div>
 
-        <div className = 'logo'>Simple Note</div>
+        <div className = 'logo'>Simple Post-it</div>
         
         <div className="wrap">
             <button className = 'button'>Logon</button>
