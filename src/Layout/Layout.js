@@ -5,6 +5,7 @@ import './Layout.css'
 
 import Toolbar from './../Toolbar/Toolbar'
 import Backdrop from './../Backdrop/Backdrop'
+import axios from 'axios'
 
 
 
@@ -45,6 +46,7 @@ class Layout extends Component{
         this.setState({noteArray: newArray})
     }
 
+
     render(){
         var componentList = []
         if(this.state.noteArray.length === 0){
@@ -55,7 +57,7 @@ class Layout extends Component{
         for(var i=0; i<this.state.noteArray.length; i++){
             const currentId = this.state.noteArray[i].id
                 componentList.push(
-                    <Col className='colItem' sm = {6} md={4}>
+                    <Col className='colItem' key={'col'+currentId} sm = {6} md={4}>
                         <Note className='item' key={'note'+currentId} updateTextHandler={this.updateTextHandler}  addNoteHandler ={this.addNoteHandler} id = {currentId} deleteNoteHandler = {this.deleteNoteHandler}/> 
                     </Col>
                 )
@@ -75,6 +77,19 @@ class Layout extends Component{
         </div>
         
         )
+    }
+
+    componentDidMount(){
+        let result = null
+        axios.get('https://postit-server.firebaseio.com/note.json')
+            .then(response => {
+                result = response.data
+
+                console.log(result)
+            });
+        
+        
+
     }
 
 }

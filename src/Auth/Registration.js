@@ -18,14 +18,19 @@ class Registration extends Component {
     }
 
     handleSubmit(event){
+        this.setState({loading: true})
         const user = {
             email: this.state.email,
             password: this.state.password,
             
         };
         axios.post('/users.json', user)
-            .then(response => console.log(response))
-            .catch(error => console.log(error));
+            .then(response => {
+                this.setState({loading:false})
+            })
+            .catch(error => {
+                this.setState({loading: false})
+            });
 
         event.preventDefault();
     }
@@ -39,6 +44,7 @@ class Registration extends Component {
 
 
     render(){
+        
         let  form =         
             <form onSubmit ={this.handleSubmit}>
                 <input 
